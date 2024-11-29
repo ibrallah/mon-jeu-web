@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeu Pong</title>
+  <title>Pong avec IA - Thème Hivernal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="gameCanvas" width="800" height="400"></canvas>
+  <div id="gameArea">
+    <div id="scoreBoard">
+      <span>Score: <span id="score">0</span></span>
+    </div>
+    <div id="player" class="paddle"></div>
+    <div id="ai" class="paddle"></div>
+    <div id="ball" class="ball"></div>
+    <button id="startBtn">Commencer le jeu</button>
+    <div id="winMessage" style="display:none;">
+      <h3>Félicitations ! Vous avez gagné ! Vous pouvez maintenant reprendre le livre.</h3>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

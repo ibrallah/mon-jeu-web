@@ -1,54 +1,108 @@
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
+let player = document.getElementById('player');
+let ai = document.getElementById('ai');
+let ball = document.getElementById('ball');
+let scoreDisplay = document.getElementById('score');
+let startBtn = document.getElementById('startBtn');
+let winMessage = document.getElementById('winMessage');
 
-// Dimensions
-const paddleHeight = 80, paddleWidth = 10, ballSize = 10;
-let ballX = canvas.width / 2, ballY = canvas.height / 2;
-let ballSpeedX = 5, ballSpeedY = 5;
+let score = 0;
+let playerPosition = 150;
+let aiPosition = 150;
+let ballPosition = { x: 50, y: 50 };
+let ballVelocity = { x: 2, y: 2 };
+let playerSpeed = 0;
+let aiSpeed = 3;
 
-// Joueurs
-let player1Y = (canvas.height - paddleHeight) / 2;
-let player2Y = (canvas.height - paddleHeight) / 2;
-
-// Contrôles clavier
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'w' && player1Y > 0) player1Y -= 20;
-  if (e.key === 's' && player1Y < canvas.height - paddleHeight) player1Y += 20;
-  if (e.key === 'ArrowUp' && player2Y > 0) player2Y -= 20;
-  if (e.key === 'ArrowDown' && player2Y < canvas.height - paddleHeight) player2Y += 20;
-});
-
-// Boucle de jeu
-function gameLoop() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Ball
-  ballX += ballSpeedX;
-  ballY += ballSpeedY;
-
-  if (ballY <= 0 || ballY >= canvas.height - ballSize) ballSpeedY = -ballSpeedY;
-
-  if (
-    (ballX <= paddleWidth && ballY > player1Y && ballY < player1Y + paddleHeight) ||
-    (ballX >= canvas.width - paddleWidth - ballSize && ballY > player2Y && ballY < player2Y + paddleHeight)
-  ) {
-    ballSpeedX = -ballSpeedX;
-  }
-
-  if (ballX < 0 || ballX > canvas.width) {
-    ballX = canvas.width / 2;
-    ballY = canvas.height / 2;
-  }
-
-  // Draw ball
-  ctx.fillStyle = 'white';
-  ctx.fillRect(ballX, ballY, ballSize, ballSize);
-
-  // Draw paddles
-  ctx.fillRect(0, player1Y, paddleWidth, paddleHeight);
-  ctx.fillRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight);
-
-  requestAnimationFrame(gameLoop);
+function updatePositions() {
+  player.style.top = playerPosition + 'px';
+  ai.style.top = aiPosition + 'px';
+  ball.style.top = ballPosition.y + 'px';
+  ball.style.left = ballPosition.x + 'px';
 }
 
-gameLoop();
+function moveBall() {
+  ballPosition.x += ballVelocity.x;
+  ballPosition.y += ballVelocity.y;
+
+  // Collision avec le haut et bas
+  if (ballPosition.y <= 0 || ballPosition.y >= gameArea.clientHeight - ball.clientHeight) {
+    ballVelocity.y = -ballVelocity.y;
+  }
+
+  // Collision avec le joueur
+  if (ballPosition.x <= 50 && ballPosition.y >= playerPosition && ballPosition.y <= playerPosition + player.clientHeight) {
+    ballVelocity.x = -ballVelocity.x;
+    score++;
+    scoreDisplay.textContent = score;
+  }
+
+  // Collision avec l'IA
+  if (ballPosition.x >= gameArea.clientWidth - 70 && ballPosition.y >= aiPosition && ballPosition.y <= aiPosition + ai.clientHeight) {
+    ballVelocity.x = -ballVelocity.x;
+  }
+
+  // Si le joueur marque
+  if (ballPosition.x <= 0) {
+    resetBall();
+    score--;
+    scoreDisplay.textContent = score;
+  }
+
+  // Si l'IA marque
+  if (ballPosition.x >= gameArea.clientWidth - ball.clientWidth) {
+    resetBall();
+    aiScore();
+  }
+
+  if (score >= 3) {
+    winMessage.style.display = 'block';
+    return;  // Stopper le jeu une fois que le joueur a gagné
+  }
+
+  updatePositions();
+}
+
+function resetBall() {
+  ballPosition = { x: gameArea.clientWidth / 2, y: gameArea.clientHeight / 2 };
+  ballVelocity = { x: 2, y: 2 };
+}
+
+function aiMove() {
+  if (aiPosition + ai.clientHeight / 2 < ballPosition.y) aiPosition += aiSpeed;
+  if (aiPosition + ai.clientHeight / 2 > ballPosition.y) aiPosition -= aiSpeed;
+
+  if (aiPosition < 0) aiPosition = 0;
+  if (aiPosition > gameArea.clientHeight - ai.clientHeight) aiPosition = gameArea.clientHeight - ai.clientHeight;
+
+  updatePositions();
+}
+
+function gameLoop() {
+  moveBall();
+  aiMove();
+}
+
+startBtn.addEventListener('click', () => {
+  score = 0;
+  scoreDisplay.textContent = score;
+  playerPosition = 150;
+  aiPosition = 150;
+  ballPosition = { x: gameArea.clientWidth / 2, y: gameArea.clientHeight / 2 };
+  winMessage.style.display = 'none';
+  updatePositions();
+  setInterval(gameLoop, 16);  // 60 FPS
+});
+
+// Mouvement du joueur
+document.addEventListener('touchstart', (e) => {
+  let touch = e.touches[0];
+  playerPosition = touch.clientY - player.clientHeight / 2;
+  if (playerPosition < 0) playerPosition = 0;
+  if (playerPosition > gameArea.clientHeight - player.clientHeight) playerPosition = gameArea.clientHeight - player.clientHeight;
+  updatePositions();
+});
+
+// Empêcher le défilement sur mobile
+document.body.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+}, { passive: false });
