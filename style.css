@@ -1,62 +1,914 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
+	background-color: #a1b8ce;
+	height: 100vh;
+	display: flex;
+	overflow: hidden;
+}
+.sleigh {
+	font-size: 3rem;
+	color: transparent; /*set color to transparent to re-color emojis*/
+	text-shadow: 0 0 0 #06223f; /*recolor emojis*/
+}
+.santa {
+	animation-name: up, across;
+	animation-duration: 10s, 6.5s;
+	animation-timing-function: ease-in-out, linear;
+	animation-iteration-count: 1, 1;
+	animation-delay: 3s, 5s;
+	position: absolute;
+	right: -80px;
+	top: 100px;
+	z-index: 2;
+	filter: blur(1px);
+}
+.santa1 {
+	animation-name: up, across;
+	animation-duration: 10s, 6.5s;
+	animation-timing-function: ease-in-out, linear;
+	animation-iteration-count: 1, 1;
+	animation-delay: 3.2s, 5.1s;
+	position: absolute;
+	right: -80px;
+	top: 100px;
+	z-index: 2;
+	filter: blur(1px);
+}
+.santa2 {
+	animation-name: up, across;
+	animation-duration: 10s, 6.5s;
+	animation-timing-function: ease-in-out, linear;
+	animation-iteration-count: 1, 1;
+	animation-delay: 3.4s, 5.2s;
+	position: absolute;
+	right: -80px;
+	top: 100px;
+	z-index: 2;
+	filter: blur(1px);
+}
+.santa3 {
+	animation-name: up, across;
+	animation-duration: 10s, 6.5s;
+	animation-timing-function: ease-in-out, linear;
+	animation-iteration-count: 1, 1;
+	animation-delay: 3.6s, 5.3s;
+	position: absolute;
+	right: -80px;
+	top: 100px;
+	z-index: 2;
+	filter: blur(1px);
+}
+.santa4 {
+	animation-name: up, across;
+	animation-duration: 10s, 6.5s;
+	animation-timing-function: ease-in-out, linear;
+	animation-iteration-count: 1, 1;
+	animation-delay: 3.8s, 5.4s;
+	position: absolute;
+	right: -80px;
+	top: 100px;
+	z-index: 2;
+	filter: blur(1px);
+}
+.santa5 {
+	animation-name: up, across;
+	animation-duration: 10s, 6.5s;
+	animation-timing-function: ease-in-out, linear;
+	animation-iteration-count: 1, 1;
+	animation-delay: 4s, 5.6s;
+	position: absolute;
+	right: -80px;
+	top: 100px;
+	z-index: 2;
+	filter: blur(1px);
+}
+
+.fa-star {
+	color: #0b364f;
+}
+
+.fa-sleigh {
+	color: #06223f;
+	transform: scale(-1, 1);
+}
+
+@keyframes up {
+	0% {
+		transform: translateY(0%);
+	}
+
+	50% {
+		transform: translateY(100px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes across {
+	from {
+		right: 0%;
+	}
+
+	to {
+		right: 100%;
+	}
+}
+
+.fa-snowflake {
+	color: #ecf2f8;
+}
+
+.snow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.snowflake {
+	animation-name: fall, shake;
+	animation-duration: 10s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 200px;
+	z-index: 7;
+	filter: blur(0.5px);
+}
+
+.snowflake1 {
+	animation-name: fall, shake;
+	animation-duration: 10s, 3s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 500px;
+	top: -100px;
+	animation-delay: 1s, 1s;
+	z-index: 7;
+	filter: blur(0.5px);
+}
+
+.snowflake2 {
+	animation-name: fall, shake;
+	animation-duration: 8s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 20px;
+	top: -100px;
+	animation-delay: 2s, 2s;
+	z-index: 7;
+	filter: blur(0.5px);
+}
+
+.snowflake3 {
+	animation-name: fall, shake;
+	animation-duration: 9s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	right: 170px;
+	top: -100px;
+	animation-delay: 3s, 5s;
+	z-index: 5;
+	filter: blur(0.7px);
+}
+
+.snowflake4 {
+	animation-name: fall, shake;
+	animation-duration: 15s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	right: 430px;
+	top: -100px;
+	animation-delay: 4s, 4s;
+	z-index: 5;
+}
+
+.snowflake5 {
+	animation-name: fall, shake;
+	animation-duration: 15s, 4s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 500px;
+	top: -100px;
+	animation-delay: 6s, 2s;
+	font-size: 2rem;
+	z-index: 6;
+	filter: blur(0.5px);
+}
+
+.snowflake6 {
+	animation-name: fall, shake;
+	animation-duration: 12s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 75px;
+	top: -100px;
+	animation-delay: 3.2s, 2s;
+	font-size: 2rem;
+	z-index: 6;
+}
+
+.snowflake7 {
+	animation-name: fall, shake;
+	animation-duration: 11s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 650px;
+	top: -100px;
+	animation-delay: 7.2s, 1s;
+	z-index: 7;
+}
+
+.snowflake8 {
+	animation-name: fall, shake;
+	animation-duration: 12s, 4s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 820px;
+	top: -100px;
+	animation-delay: 4s, 2s;
+	font-size: 2rem;
+	z-index: 5;
+	filter: blur(0.5px);
+}
+
+.snowflake9 {
+	animation-name: fall, shake;
+	animation-duration: 12s, 4s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 170px;
+	top: -100px;
+	animation-delay: 5s, 2s;
+	font-size: 2rem;
+	z-index: 5;
+	filter: blur(0.3px);
+}
+
+.snowflake10 {
+	animation-name: fall, shake;
+	animation-duration: 15s, 9s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 350px;
+	top: -100px;
+	animation-delay: 2.7s, 2s;
+	font-size: 3rem;
+	z-index: 7;
+}
+
+.snowflake11 {
+	animation-name: fall, shake;
+	animation-duration: 12s, 7s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	right: 400px;
+	top: -100px;
+	animation-delay: 0.5s, 2s;
+	font-size: 3rem;
+	z-index: 7;
+}
+
+.snowflake12 {
+	/*small*/
+	animation-name: fall, shake;
+	animation-duration: 12s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	left: 470px;
+	top: -100px;
+	animation-delay: 5s, 2s;
+	z-index: 7;
+	filter: blur(0.9px);
+}
+
+.snowflake13 {
+	/*small*/
+	animation-name: fall, shake;
+	animation-duration: 10s, 5s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	right: 220px;
+	top: -100px;
+	animation-delay: 1s, 2s;
+	z-index: 7;
+	filter: blur(0.6px);
+}
+
+.snowflake14 {
+	/*small*/
+	animation-name: fall, shake;
+	animation-duration: 9s, 4s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	position: absolute;
+	right: 140px;
+	top: -100px;
+	animation-delay: 2s, 2s;
+	z-index: 7;
+	filter: blur(0.5px);
+}
+
+@keyframes fall {
+	0% {
+		top: -10%;
+	}
+
+	100% {
+		top: 100%;
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: translatex(0);
+	}
+	50% {
+		transform: translatex(50px);
+	}
+	100% {
+		transform: translatex(0);
+	}
+}
+
+.mountains {
+	width: 100%;
+}
+.mt1, .mt2, .mt3, .mt4 {
+	position: absolute;
+	bottom: 0;
+	z-index: 1; /* Assure-toi que les montagnes soient derrière les autres éléments comme les flocons de neige et les traîneaux */
+  }
+  .mt1 {
+	left: 100px;
+	border-top: 0 solid transparent;
+	border-right: 150px solid transparent;
+	border-left: 150px solid transparent;
+	border-bottom: 300px solid #0b364f; /* couleur de la montagne */
+  }
+.mtsnow1 {
+	position: absolute;
+	content: "";
+	left: -50px;
+	bottom: -100px;
+	border-top: 0px solid transparent;
+	border-right: 50px solid transparent;
+	border-left: 50px solid transparent;
+	border-bottom: 100px solid #c1cfd7;
+}
+
+.snow-peak-1a {
+	/*sharp snow edge*/
+	position: absolute;
+	content: "";
+	bottom: -130px;
+	left: -45px;
+	border-top: 30px solid #c1cfd7;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-1b {
+	position: absolute;
+	content: "";
+	bottom: -130px;
+	left: -7px;
+	border-top: 30px solid #c1cfd7;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.mt2 {
+	left: -20px;
+	border-top: 0 solid transparent;
+	border-right: 150px solid transparent;
+	border-left: 150px solid transparent;
+	border-bottom: 200px solid #094669;
+  }
+
+.snow2 {
+	position: absolute;
+	content: "";
+	left: -75px;
+	bottom: -98px;
+	border-top: 0px solid transparent;
+	border-right: 75px solid transparent;
+	border-left: 75px solid transparent;
+	border-bottom: 100px solid #e4e8eb;
+}
+
+.snow-peak-2a {
+	position: absolute;
+	content: "";
+	bottom: -110px;
+	left: -60px;
+	border-top: 20px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-2b {
+	position: absolute;
+	content: "";
+	bottom: -120px;
+	left: -25px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-2c {
+	position: absolute;
+	content: "";
+	bottom: -110px;
+	right: -60px;
+	border-top: 20px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+
+.mt3 {
+	left: 280px;
+	border-top: 0 solid transparent;
+	border-right: 150px solid transparent;
+	border-left: 150px solid transparent;
+	border-bottom: 175px solid #094669;
+  }
+
+.snow3 {
+	position: absolute;
+	content: "";
+	left: -70px;
+	bottom: -80px;
+	border-top: 0px solid transparent;
+	border-right: 70px solid transparent;
+	border-left: 70px solid transparent;
+	border-bottom: 90px solid #e4e8eb;
+}
+
+.snow-peak-3a {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	left: -60px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-3b {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	left: -20px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-3c {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	right: -20px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-3d {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	right: -60px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.mt4 {
+	left: 800px;
+	border-top: 0 solid transparent;
+	border-right: 150px solid transparent;
+	border-left: 150px solid transparent;
+	border-bottom: 250px solid #0b364f;
+  }
+
+
+.snow4 {
+	position: absolute;
+	content: "";
+	left: -47px;
+	bottom: -75px;
+	border-top: 0px solid transparent;
+	border-right: 47px solid transparent;
+	border-left: 47px solid transparent;
+	border-bottom: 80px solid #c1cfd7;
+}
+
+.snow-peak-4a {
+	/*sharp snow edge*/
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	left: -45px;
+	border-top: 30px solid #c1cfd7;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+} /* the sharp snow edge an is INVERTED triangle, so we want to see the the top border,not bottom. Top border should have a color. Other borders should be transparent*/
+
+.snow-peak-4b {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	left: -7px;
+	border-top: 30px solid #c1cfd7;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.mt5 {
+	position: absolute;
+	content: "";
+	left: 500px;
+	bottom: 0;
+	border-top: 0px solid transparent;
+	border-right: 200px solid transparent;
+	border-left: 200px solid transparent;
+	border-bottom: 150px solid #094669;
+	z-index: 6;
+}
+
+.snow5 {
+	position: absolute;
+	content: "";
+	left: -100px;
+	bottom: -75px;
+	border-top: 0px solid transparent;
+	border-right: 100px solid transparent;
+	border-left: 100px solid transparent;
+	border-bottom: 75px solid #e4e8eb;
+}
+
+.snow-peak-5a {
+	position: absolute;
+	content: "";
+	bottom: -95px;
+	left: -60px;
+	border-top: 20px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-5b {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	left: -25px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-5c {
+	position: absolute;
+	content: "";
+	bottom: -95px;
+	right: -60px;
+	border-top: 20px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.mt6 {
+	position: absolute;
+	content: "";
+	left: 950px;
+	bottom: 0;
+	border-top: 0px solid transparent;
+	border-right: 150px solid transparent;
+	border-left: 150px solid transparent;
+	border-bottom: 175px solid #094669;
+	z-index: 6;
+}
+
+.snow6 {
+	position: absolute;
+	content: "";
+	left: -70px;
+	bottom: -80px;
+	border-top: 0px solid transparent;
+	border-right: 70px solid transparent;
+	border-left: 70px solid transparent;
+	border-bottom: 90px solid #e4e8eb;
+}
+
+.snow-peak-6a {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	left: -60px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-6b {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	left: -20px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-6c {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	right: -20px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+.snow-peak-6d {
+	position: absolute;
+	content: "";
+	bottom: -100px;
+	right: -60px;
+	border-top: 30px solid #e4e8eb;
+	border-right: 25px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 25px solid transparent;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+  }
+  
+  #gameArea {
+	width: 80%;
+	height: 80%;
+	position: relative;
+	background-color: #cce0ff; /* Thème hivernal */
+	border: 2px solid #a1c4e7;
+  }
+  
+  .paddle {
+	width: 20px;
+	height: 100px;
+	position: absolute;
+	background-color: #005f87;
+  }
+  
+  #player {
+	left: 30px;
+	background-color: #005f87;
+  }
+  
+  #ai {
+	right: 30px;
+	background-color: #ff4444;
+  }
+  
+  .ball {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #333;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+  }
+  
+  #scoreBoard {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 24px;
+	color: #333;
+  }
+  
+/* Le bouton */
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 13rem;
+  height: 3rem;
+  background-size: 300% 300%;
+  cursor: pointer;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  position: absolute;  /* Pour le placer en haut de la page */
+  top: 5px;  /* Distance du haut de la page */
+  left: 50%;  /* Centrer horizontalement */
+  transform: translateX(-50%);  /* Centrer parfaitement */
+  z-index: 999;  /* Placer le bouton au-dessus des autres éléments */
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
 }
 
-#gameArea {
-  width: 80%;
-  height: 80%;
+strong {
+  z-index: 2;
+  font-family: "Avalors Personal Use";
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #fe53bb;
+}
+
+#stars {
   position: relative;
-  background-color: #cce0ff; /* Thème hivernal */
-  border: 2px solid #a1c4e7;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
 }
 
-.paddle {
-  width: 20px;
-  height: 100px;
+#stars::after {
+  content: "";
   position: absolute;
-  background-color: #005f87;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
 }
 
-#player {
-  left: 30px;
-  background-color: #005f87;
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
 }
 
-#ai {
-  right: 30px;
-  background-color: #ff4444;
-}
-
-.ball {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #333;
+#stars::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
 }
 
-#scoreBoard {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  color: #333;
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
 }
 
-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }

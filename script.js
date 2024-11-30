@@ -2,8 +2,9 @@ let player = document.getElementById('player');
 let ai = document.getElementById('ai');
 let ball = document.getElementById('ball');
 let scoreDisplay = document.getElementById('score');
-let startBtn = document.getElementById('startBtn');
+let startbtn = document.getElementById('startButton'); // Correct ID
 let winMessage = document.getElementById('winMessage');
+let gameArea = document.getElementById('gameArea'); // Ajout de la référence à gameArea
 
 let score = 0;
 let playerPosition = 150;
@@ -82,7 +83,7 @@ function gameLoop() {
   aiMove();
 }
 
-startBtn.addEventListener('click', () => {
+startbtn.addEventListener('click', () => {
   score = 0;
   scoreDisplay.textContent = score;
   playerPosition = 150;
