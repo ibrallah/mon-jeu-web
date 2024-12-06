@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong avec IA</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/901ba758ee.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="gameArea">
+    <div id="scoreBoard">
+      <span>Score: <span id="score">0</span></span>
+    </div>
+    <div id="player" class="paddle"></div>
+    <div id="ai" class="paddle"></div>
+    <div id="ball" class="ball"></div>
+    <button id="startButton" type="button" class="btn">
+		<strong>PLAY</strong>
+		<div id="container-stars">
+		  <div id="stars"></div>
+		</div>
+	  
+		<div id="glow">
+		  <div class="circle"></div>
+		  <div class="circle"></div>
+		</div>
+	  </button>
+	  
+	  
+    <div id="winMessage" style="display:none;">
+      <h3>Félicitations ! Vous avez gagné ! Vous pouvez maintenant reprendre le livre.</h3>
+    </div>
+  </div>
+
+  <section class="sleigh">
+    <div class="santa">🦌</div>
+    <div class="santa1">🦌</div>
+    <div class="santa2">🦌</div>
+    <div class="santa3">🦌</div>
+    <div class="santa4">🦌</div>
+    <div class="santa5"><i class="fa-solid fa-sleigh"></i></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
