@@ -1,69 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenue dans l'Aventure</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Librairie Interactive</title>
+    <link rel="stylesheet" href="home.css">
+    <script defer src="home.js"></script>
 </head>
 <body>
-  <div class="welcome-container">
-    <h1>Bienvenue dans la Librairie Interactive</h1>
-    <p>Plongez dans une aventure unique où chaque page cache un défi, et chaque défi vous mène à la victoire. Êtes-vous prêt à commencer ?</p>
-    
-    <a href="index.html" class="welcome-btn">
-        Commencer l'Aventure
-        <div class="star-1">
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53">
-            <g id="Layer_x0020_1">
-              <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-2">
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53">
-            <g id="Layer_x0020_1">
-              <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-3">
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53">
-            <g id="Layer_x0020_1">
-              <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-4">
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53">
-            <g id="Layer_x0020_1">
-              <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-5">
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53">
-            <g id="Layer_x0020_1">
-              <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-6">
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53">
-            <g id="Layer_x0020_1">
-              <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
-            </g>
-          </svg>
-        </div>
-    </a>
-  </div>
+    <header>
+        <h1>Bienvenue dans la Librairie Interactive</h1>
+        <p>Plongez dans une aventure unique où chaque page cache un défi, et chaque défi vous mène à la victoire.<br>Êtes-vous prêt à commencer ?</p>
+        <button onclick="startAdventure()">Commencer l'Aventure</button>
+    </header>
 
-  <div id="nova-messages" class="nova-chat">
-    <img src="images/nova.png" alt="Nova" class="nova-image">
-    <p><strong>Nova :</strong> Bonjour aventurier ! Prêt à commencer cette grande aventure ?</p>
-  </div>
+    <section id="nova-section">
+        <div id="nova-container">
+            <img id="nova-image" src="images/nova.png" alt="Nova, l'assistante virtuelle">
+            <p id="nova-message">Bonjour, aventurier ! Je suis Nova, ton guide dans cette aventure intergalactique !</p>
+        </div>
+    </section>
 
-  <script src="home.js"></script>
+    <footer>
+        <p>&copy; 2024 Librairie Interactive. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
