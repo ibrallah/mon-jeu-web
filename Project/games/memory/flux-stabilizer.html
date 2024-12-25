@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stabiliser le Flux</title>
+  <link rel="stylesheet" href="flux-stabilizer.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Stabiliser le Flux</h1>
+    <p>
+      Appuyez sur tous les points énergétiques avant la fin du temps imparti pour stabiliser l’anomalie !
+    </p>
+    <div id="timer">Temps restant : 20s</div>
+    <div id="game-area" class="game-area">
+      <div id="energy-sphere" class="energy-sphere"></div>
+    </div>
+    <button id="reset" class="btn-reset">Recommencer</button>
+    <div id="status"></div>
+  </div>
+
+  <!-- Nova -->
+  <div class="nova-container">
+    <img id="nova-image" src="nova.png" alt="Nova, l'IA" />
+    <div id="nova-message">Salut, explorateur ! Dépêche-toi de stabiliser le flux !</div>
+  </div>
+
+  <script src="flux-stabilizer.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Énergétique</title>
+  <link rel="stylesheet" href="seal-mechanism.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Puzzle Énergétique</h1>
+    <p>
+      Alignez les flux énergétiques pour sceller la sphère avant la surcharge !
+    </p>
+    <div id="timer">Temps restant : 60s</div>
+    <div id="game-area" class="game-area">
+      <!-- Les segments du puzzle seront générés par JavaScript -->
+    </div>
+    <button id="reset" class="btn-reset">Recommencer</button>
+    <div id="status"></div>
+  </div>
+
+  <!-- Nova -->
+  <div class="nova-container">
+    <img id="nova-image" src="nova.png" alt="Nova, l'IA" />
+    <div id="nova-message">Utilise ta logique pour stabiliser l'énergie !</div>
+  </div>
+
+  <script src="seal-mechanism.js"></script>
+</body>
+</html>

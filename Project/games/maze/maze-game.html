@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labyrinthe Énergétique</title>
+  <link rel="stylesheet" href="maze-game.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Redémarrage de la Centrale</h1>
+    <p>Activez toutes les connexions dans le bon ordre avant la surcharge !</p>
+    <div id="timer">Temps restant : 30s</div>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <div id="status"></div>
+  </div>
+  <div class="nova-container">
+    <img id="nova-image" src="nova.png" alt="Nova, l'IA" />
+    <div id="nova-message">Salut, c'est Nova ! Prêt à relever ce défi ?</div>
+  </div>
+  
+
+
+  <script src="maze-game.js"></script>
+</body>
+</html>
