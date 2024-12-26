@@ -106,7 +106,7 @@ const timer = startTimer();
 
 // Gestion des touches directionnelles
 window.addEventListener("keydown", (e) => {
-  const speed = 20;
+  const speed = 5;
   switch (e.key) {
     case "ArrowUp":
       movePlayer(0, -speed);
