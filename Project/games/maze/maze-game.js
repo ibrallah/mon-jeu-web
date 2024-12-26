@@ -17,7 +17,7 @@ let connections = [
 let sequence = [];
 let playerSequence = [];
 let gameStatus = "Activez toutes les connexions dans le bon ordre !";
-let timeLeft = 30;
+let timeLeft = 25;
 
 function drawPlayer() {
   ctx.fillStyle = "yellow";
@@ -123,26 +123,8 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-// Gestion des interactions tactiles
-let startX, startY;
-
-canvas.addEventListener("touchstart", (e) => {
-  const touch = e.touches[0];
-  startX = touch.clientX;
-  startY = touch.clientY;
-});
-
-canvas.addEventListener("touchmove", (e) => {
-  const touch = e.touches[0];
-  const dx = touch.clientX - startX;
-  const dy = touch.clientY - startY;
-
-  if (Math.abs(dx) > Math.abs(dy)) {
-    movePlayer(dx > 0 ? 20 : -20, 0);
-  } else {
-    movePlayer(0, dy > 0 ? 20 : -20);
-  }
-
-  startX = touch.clientX;
-  startY = touch.clientY;
-});
+// Gestion des boutons directionnels
+document.getElementById("up").addEventListener("click", () => movePlayer(0, -20));
+document.getElementById("down").addEventListener("click", () => movePlayer(0, 20));
+document.getElementById("left").addEventListener("click", () => movePlayer(-20, 0));
+document.getElementById("right").addEventListener("click", () => movePlayer(20, 0));
