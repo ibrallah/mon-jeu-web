@@ -13,16 +13,11 @@ let connections = [
   { x: 300, y: 300, width: 40, height: 40, active: false },
   { x: 400, y: 350, width: 40, height: 40, active: false },
   { x: 500, y: 300, width: 40, height: 40, active: false },
-  { x: 450, y: 200, width: 40, height: 40, active: false },
-  { x: 350, y: 100, width: 40, height: 40, active: false },
-  { x: 250, y: 150, width: 40, height: 40, active: false },
-  { x: 150, y: 200, width: 40, height: 40, active: false },
-  { x: 100, y: 300, width: 40, height: 40, active: false },
 ];
 let sequence = [];
 let playerSequence = [];
 let gameStatus = "Activez toutes les connexions dans le bon ordre !";
-let timeLeft = 30; // Temps limite en secondes
+let timeLeft = 30;
 
 function drawPlayer() {
   ctx.fillStyle = "yellow";
@@ -40,7 +35,7 @@ function drawConnections() {
 }
 
 function generateSequence() {
-  sequence = connections.map((_, index) => index); // Ordre séquentiel
+  sequence = connections.map((_, index) => index);
 }
 
 function checkCollision(player, connection) {
@@ -67,24 +62,11 @@ function handleCollision(index) {
   }
 }
 
-function movePlayer(e) {
+function movePlayer(dx, dy) {
   if (gameStatus !== "Activez toutes les connexions dans le bon ordre !") return;
 
-  const speed = 20;
-  switch (e.key) {
-    case "ArrowUp":
-      player.y = Math.max(0, player.y - speed);
-      break;
-    case "ArrowDown":
-      player.y = Math.min(canvas.height - player.size, player.y + speed);
-      break;
-    case "ArrowLeft":
-      player.x = Math.max(0, player.x - speed);
-      break;
-    case "ArrowRight":
-      player.x = Math.min(canvas.width - player.size, player.x + speed);
-      break;
-  }
+  player.x = Math.max(0, Math.min(canvas.width - player.size, player.x + dx));
+  player.y = Math.max(0, Math.min(canvas.height - player.size, player.y + dy));
 
   connections.forEach((connection, index) => {
     if (checkCollision(player, connection) && !connection.active) {
@@ -121,28 +103,46 @@ function draw() {
 generateSequence();
 draw();
 const timer = startTimer();
-window.addEventListener("keydown", movePlayer);
 
-const novaMessages = [
-  "Bien joué, aventurier ! Mais ne te repose pas sur tes lauriers ! 🚀",
-  "Attention, une surcharge n’est jamais loin ! 🛑",
-  "Oh, tu veux vraiment passer par là ? Hmmm... intéressant. 🤔",
-  "Nova approuve ce mouvement stratégique ! 🧠",
-  "Et si je te disais que tu étais proche du but ? (ou pas...)",
-  "Garde le rythme, sinon tout va exploser ! 💥",
-  "Courage, l’énergie n’attend pas ! ⚡",
-  "Nova te surveille... et t’encourage à ne pas échouer ! 👀",
-];
+// Gestion des touches directionnelles
+window.addEventListener("keydown", (e) => {
+  const speed = 20;
+  switch (e.key) {
+    case "ArrowUp":
+      movePlayer(0, -speed);
+      break;
+    case "ArrowDown":
+      movePlayer(0, speed);
+      break;
+    case "ArrowLeft":
+      movePlayer(-speed, 0);
+      break;
+    case "ArrowRight":
+      movePlayer(speed, 0);
+      break;
+  }
+});
 
-function updateNovaMessage() {
-  const randomIndex = Math.floor(Math.random() * novaMessages.length);
-  document.getElementById("nova-message").innerText = novaMessages[randomIndex];
-}
+// Gestion des interactions tactiles
+let startX, startY;
 
-// Met à jour le message toutes les 10 secondes
-setInterval(updateNovaMessage, 10000);
+canvas.addEventListener("touchstart", (e) => {
+  const touch = e.touches[0];
+  startX = touch.clientX;
+  startY = touch.clientY;
+});
 
-// Déclenche un nouveau message après une action du joueur
-function onPlayerAction() {
-  updateNovaMessage();
-}
+canvas.addEventListener("touchmove", (e) => {
+  const touch = e.touches[0];
+  const dx = touch.clientX - startX;
+  const dy = touch.clientY - startY;
+
+  if (Math.abs(dx) > Math.abs(dy)) {
+    movePlayer(dx > 0 ? 20 : -20, 0);
+  } else {
+    movePlayer(0, dy > 0 ? 20 : -20);
+  }
+
+  startX = touch.clientX;
+  startY = touch.clientY;
+});
