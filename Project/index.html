@@ -11,11 +11,12 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f0f8ff; /* Couleur bleu neige pour l'hiver */
+      background: linear-gradient(to bottom right, #f0f8ff, #d6e4ff);
       color: #333;
       text-align: center;
       padding: 0;
       margin: 0;
+      min-height: 100vh;
     }
 
     h1 {
@@ -23,6 +24,7 @@
       font-size: 3em;
       color: #1e3a8a; /* Bleu hivernal */
       margin-top: 50px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .card {
@@ -30,11 +32,12 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       margin: 20px;
       background-color: #ffffff;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
     .card-body {
@@ -42,6 +45,11 @@
       padding: 20px;
       border-radius: 15px;
       color: #1e3a8a;
+    }
+
+    .card-img-top {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
     }
 
     .btn-unlock {
@@ -81,6 +89,7 @@
       padding: 10px 20px;
       border-radius: 10px;
       font-size: 18px;
+      backdrop-filter: blur(2px);
     }
 
     .game-card {
