@@ -11,7 +11,7 @@
 /* Navbar Styling */
 
 .navbar {
-    background-color: #003366; /* Bleu glacé */
+    background: linear-gradient(90deg, #003366, #0055aa);
     border-bottom: 2px solid #ffffff; /* Bordure blanche pour effet hivernal */
   }
   
@@ -76,7 +76,7 @@
   }
   /* Footer Styles */
 .footer {
-    background-color: #003366; /* Bleu glacé */
+    background: linear-gradient(90deg, #003366, #0055aa);
     color: #ffffff;
     padding: 20px 0;
     position: relative;
